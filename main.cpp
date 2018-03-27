@@ -23,7 +23,7 @@ int main()
         cout << "Program sluzacy do obslugi kolejki priorytetowej." << endl;
         cout << "Mozna w nim rowniez stworzyc nieuporzadkowana liste  " << endl;
         cout << "oraz wykonac na niej sortowanie" << endl;
-        cout << " [prio,liczba] " << endl << endl;
+        cout << " [prio,element] " << endl << endl;
         k.printk();
         lis->printl();
         cout << "Polecenia dotyczace kolejki priorytowej" << endl;
@@ -55,13 +55,13 @@ int main()
 
         case 1:
         {
-            int prio;
-            typ liczba;
+            typ prio;
+            typ elem;
             cout << "Podaj liczbe ";
-            cin >> liczba;
+            cin >> elem;
             cout << endl << "oraz jej priorytet " << endl;
             cin >> prio;
-            k.insert(liczba, prio);
+            k.insert(elem, prio);
             break;
         }
 
@@ -70,7 +70,7 @@ int main()
             if(!k.isEmpty())
             {
                 typ c = k.getdata(1);
-                int b = k.getprio(1);
+                typ b = k.getprio(1);
                 cout << "Element o najmniejszym kluczu to [" << b << "," << c << "]" << endl;
                 Sleep(1500);
             }
@@ -84,7 +84,7 @@ int main()
             if(!k.isEmpty())
             {
                 typ c = k.getdata(1);
-                int b = k.getprio(1);
+                typ b = k.getprio(1);
                 k.removeMin();
                 cout << "Usunieto [" << b << "," << c << "]" << endl;
                 Sleep(1000);
@@ -133,44 +133,44 @@ int main()
         }
         case 7:
         {
-            int prio,index;
-            typ liczba;
+            int index;
+            typ elem, prio;
             cout << "Priorytet >>";
             cin >> prio;
-            cout << "Liczba >> ";
-            cin >> liczba;
-            index = k.indexOf(liczba,prio);
+            cout << "elem >> ";
+            cin >> elem;
+            index = k.indexOf(elem,prio);
 
             if(index>0)
             {
-            cout << endl << "Element - [" << prio << ", " << liczba << "]" << endl;
+            cout << endl << "Element - [" << prio << ", " << elem << "]" << endl;
             cout << "ma indeks  -  " << index << endl;
             }
-            else cout << "brak takiego elementu jak [" << prio << ", " << liczba << "]" << endl;
+            else cout << "brak takiego elementu jak [" << prio << ", " << elem << "]" << endl;
             Sleep(2500);
             break;
 
         }
         case 8:
         {
-            int prio;
-            typ liczba;
+            typ prio;
+            typ elem;
             cout << "Podaj liczbe ";
-            cin >> liczba;
+            cin >> elem;
             cout << endl << "oraz jej priorytet " << endl;
             cin >> prio;
-            lis->push_front(liczba, prio);
+            lis->push_front(elem, prio);
             break;
         }
         case 9:
         {
-            int prio;
-            typ liczba;
+            typ prio;
+            typ elem;
             cout << "Podaj liczbe ";
-            cin >> liczba;
+            cin >> elem;
             cout << endl << "oraz jej priorytet " << endl;
             cin >> prio;
-            lis->push_back(liczba, prio);
+            lis->push_back(elem, prio);
             break;
         }
         case 10:
@@ -192,8 +192,8 @@ int main()
             for(int i=0;i<ilosc;i++)
             {
                 typ prio = (rand() % 100) + 0;
-                typ liczba = (rand() % 100) + 0;
-                lis->push_front(liczba,prio);
+                typ elem = (rand() % 100) + 0;
+                lis->push_front(elem,prio);
             }
             break;
         }

@@ -12,7 +12,7 @@ using namespace std;
   do listy w miejsce wskazane przez priorytet.
 */
 template <typename T>
-void queue<T>::insert(T liczba, int prio)
+void queue<T>::insert(T liczba, T prio)
 {
     count++;
     node *v;
@@ -52,7 +52,7 @@ void queue<T>::insert(T liczba, int prio)
   funkcja odpowiedzialna za wstawienie elementu na poczatek listy.
 */
 template <typename T>
-void queue<T>::push_front(T liczba, int prio)
+void queue<T>::push_front(T liczba, T prio)
 {
     count++;
     node *v;
@@ -76,7 +76,7 @@ void queue<T>::push_front(T liczba, int prio)
   funkcja odpowiedzialna za wstawienie elementu na poczatek listy.
 */
 template <typename T>
-void queue<T>::push_back(T liczba, int prio)
+void queue<T>::push_back(T liczba, T prio)
 {
     count++;
     node *v;
@@ -214,7 +214,7 @@ typename queue<T>::node * queue<T>::atIndex(int index)
   funkcja daje dostep do priorytetu danego wezla
 */
 template<typename T>
-int queue<T>::getprio(int index)
+T queue<T>::getprio(int index)
 {
     node * v;
     v = atIndex(index);
@@ -237,7 +237,7 @@ T queue<T>::getdata(int index)
   funkcja zwraca indeks szukanego elementu
 */
 template<typename T>
-int queue<T>::indexOf(T liczba, int prio)
+int queue<T>::indexOf(T liczba, T prio)
 {
     int index=1;
     node * v;
@@ -263,4 +263,4 @@ int queue<T>::indexOf(T liczba, int prio)
 }
 template class queue<int>;
 template class queue<float>;
-
+template class queue<char>;

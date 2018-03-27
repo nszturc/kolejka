@@ -12,7 +12,7 @@ protected:
     {
         node *next;
         node *prev;
-        int prio;
+        T prio;
         T data;
     };
     node *head;
@@ -29,8 +29,8 @@ public:
     {
         while(count) removeMin();
     }
-    void push_front(T liczba, int prio);
-    void push_back(T liczba, int prio);
+    void push_front(T liczba, T prio);
+    void push_back(T liczba, T prio);
     node *dequeue(node *e);
     node *pop_back();
     node *removeMin();
@@ -39,11 +39,11 @@ public:
     bool isEmpty(void);
     void printk(void);
     void printl(void);
-    void insert(T liczba, int prio);
-    int getprio(int index);
+    void insert(T liczba, T prio);
+    T getprio(int index);
     int getcount(void) { return count; }
     node * atIndex(int index);
     T getdata(int index);
-    int indexOf(T liczba, int prio);
+    int indexOf(T liczba, T prio);
 };
 #endif // KOLEJKA_HPP

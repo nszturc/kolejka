@@ -62,4 +62,5 @@ void sorting<T>::selection(queue<T> *list)
     }
 }
 template class sorting<int>;
-template class queue<float>;
+template class sorting<float>;
+template class sorting<char>;
