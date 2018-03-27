@@ -4,14 +4,17 @@
 #include <windows.h>
 #include <ctime>
 
+typedef int typ;
+
 using namespace std;
+
 
 int main()
 {
     srand(time(NULL));
-    queue<int> *lis = new queue<int>;
-    queue<int> k;
-    sorting<int> s;
+    queue<typ> *lis = new queue<typ>;
+    queue<typ> k;
+    sorting<typ> s;
     int c = 1;
 
     while(c != 0)
@@ -52,7 +55,8 @@ int main()
 
         case 1:
         {
-            int prio, liczba;
+            int prio;
+            typ liczba;
             cout << "Podaj liczbe ";
             cin >> liczba;
             cout << endl << "oraz jej priorytet " << endl;
@@ -65,7 +69,7 @@ int main()
         {
             if(!k.isEmpty())
             {
-                int c = k.getdata(1);
+                typ c = k.getdata(1);
                 int b = k.getprio(1);
                 cout << "Element o najmniejszym kluczu to [" << b << "," << c << "]" << endl;
                 Sleep(1500);
@@ -79,7 +83,7 @@ int main()
         {
             if(!k.isEmpty())
             {
-                int c = k.getdata(1);
+                typ c = k.getdata(1);
                 int b = k.getprio(1);
                 k.removeMin();
                 cout << "Usunieto [" << b << "," << c << "]" << endl;
@@ -129,7 +133,8 @@ int main()
         }
         case 7:
         {
-            int liczba,prio,index;
+            int prio,index;
+            typ liczba;
             cout << "Priorytet >>";
             cin >> prio;
             cout << "Liczba >> ";
@@ -148,7 +153,8 @@ int main()
         }
         case 8:
         {
-            int prio, liczba;
+            int prio;
+            typ liczba;
             cout << "Podaj liczbe ";
             cin >> liczba;
             cout << endl << "oraz jej priorytet " << endl;
@@ -158,7 +164,8 @@ int main()
         }
         case 9:
         {
-            int prio, liczba;
+            int prio;
+            typ liczba;
             cout << "Podaj liczbe ";
             cin >> liczba;
             cout << endl << "oraz jej priorytet " << endl;
@@ -184,8 +191,8 @@ int main()
             cin >> ilosc;
             for(int i=0;i<ilosc;i++)
             {
-                int prio = (rand() % 100) + 0;
-                int liczba = (rand() % 100) + 0;
+                typ prio = (rand() % 100) + 0;
+                typ liczba = (rand() % 100) + 0;
                 lis->push_front(liczba,prio);
             }
             break;
@@ -204,6 +211,7 @@ int main()
             break;
         }
     }
+    delete lis;
 
     return 0;
 }

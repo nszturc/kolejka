@@ -20,7 +20,7 @@ void sorting<T>::insert(queue<T> *list)
         //kolejka.printk();
         v = list->removeMin();
         kolejka.insert(v->data, v->prio);
-        //cout << endl;
+       // cout << endl;
         //Sleep(500);
     }
     while(!kolejka.isEmpty())
@@ -57,8 +57,9 @@ void sorting<T>::selection(queue<T> *list)
        // kolejka.printk();
         v = kolejka.removeMin();
         list->insert(v->data, v->prio);
-        //cout << endl;
+       // cout << endl;
         //Sleep(500);
     }
 }
 template class sorting<int>;
+template class queue<float>;

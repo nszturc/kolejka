@@ -262,3 +262,5 @@ int queue<T>::indexOf(T liczba, int prio)
 
 }
 template class queue<int>;
+template class queue<float>;
+
